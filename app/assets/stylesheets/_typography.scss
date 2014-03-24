@@ -1,0 +1,48 @@
+body {
+  font-family: Gotham;
+  font-size: 1.1em;
+  color: $body-font-color;
+}
+
+h2 {
+  font-size: 4.44em;
+}
+
+.card {
+  position: relative;
+  .title {
+    font-family: "Gotham XNarrow";
+    font-weight: 100;
+    margin-left: -3px;
+    margin-bottom: 0.1em;
+  }
+
+  .date-container {
+    font-family: "Gotham XNarrow";
+    font-weight: bold;
+    color: $card-date-color;
+
+    .date {
+      font-weight: 100;
+    }
+
+    .date, .month {
+      font-size: 2em;
+    }
+
+    .month, year {
+      font-weight: bold;
+    }
+  }
+
+  .symptom {
+    color: $card-date-color;
+    font-size: 1.4em;
+    margin-right: 0.3em;
+  }
+
+  .doctor {
+    font-family: "Gotham XNarrow";
+    font-size: 1.77em;
+  }
+}

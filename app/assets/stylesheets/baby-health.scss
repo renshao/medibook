@@ -1,0 +1,71 @@
+
+@import 'variables';
+@import 'typography';
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+ 
+.clearfix {
+  display: inline-block;
+}
+
+$card-padding-tb: 20px;
+$card-padding-lr: 20px;
+
+.card {
+  padding: $card-padding-tb $card-padding-lr;
+  margin-right: 7px;
+  margin-bottom: 10px;
+  background: url(card-bg.png);
+  width: $card-width;
+  border-top: 5px solid $card-orange-color;
+
+  @mixin card-color($color) {
+    border-top-color: $color;
+    .title {
+      color: $color;
+    }
+  }
+
+  &.orange {
+    @include card-color($card-orange-color);
+  }
+
+  &.blue {
+    @include card-color($card-blue-color);
+  }
+
+  &.green {
+    @include card-color($card-green-color);
+  }
+
+  &.red {
+    @include card-color($card-red-color);
+  }
+
+  .date-container {
+    text-align: right;
+    position: absolute;
+    top: $card-padding-tb;
+    right: $card-padding-lr;
+  }
+
+  .symptoms {
+    margin-bottom: 2em;
+    .symptom {
+      display: inline-block;
+    }
+  }
+
+  .doctor {
+    position: absolute;
+    right: $card-padding-lr;
+    display: inline-block;
+  }
+}

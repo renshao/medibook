@@ -3,5 +3,52 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+# cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Card.create([
+  {
+    title: 'Flu',
+    symptoms: 'fever,cough,runny nose',
+    medications: 'Dymadon,Fess little nose,Cuddles',
+    doctor: 'Dr. Alan',
+    date: '2013-07-13'.to_date,
+    color: 'orange'
+  },
+
+  {
+    title: 'Gastro',
+    symptoms: 'fever,diarrhea',
+    medications: 'Dymadon,Hydralites,Cuddles',
+    doctor: 'Dr. Lisik',
+    date: '2013-08-10'.to_date,
+    color: 'green'
+  },
+
+  {
+    title: 'Asthma',
+    symptoms: 'cough,runny nose',
+    medications: 'Ventolin,Flixotide,Redipred',
+    doctor: 'Dr. Nixon',
+    date: '2014-02-08'.to_date,
+    color: 'blue'
+  },
+
+  {
+    title: 'Croup',
+    symptoms: 'cough,runny nose,fever',
+    medications: 'Dymadon,Hydralites,Cuddles',
+    doctor: 'Dr. Nixon',
+    date: '2014-08-14'.to_date,
+    color: 'red'
+  },
+
+  {
+    title: 'Asthma',
+    symptoms: 'cough,runny nose',
+    medications: 'Ventolin,Flixotide,Redipred',
+    doctor: 'Dr. Nixon',
+    date: '2014-09-12'.to_date,
+    color: 'blue'
+  }  
+])
