@@ -1,6 +1,20 @@
-
 @import 'variables';
 @import 'typography';
+
+body {
+  background: url(bg.png);
+}
+
+.container {
+  width: 1270px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header {
+  background-color: #83D0D6;
+  margin-bottom: 20px;
+}
 
 .clearfix:after {
   content: ".";
@@ -25,6 +39,9 @@ $card-padding-lr: 20px;
   background: url(card-bg.png);
   width: $card-width;
   border-top: 5px solid $card-orange-color;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25), -0.5px 0 1px rgba(0, 0, 0, 0.25);;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 
   @mixin card-color($color) {
     border-top-color: $color;

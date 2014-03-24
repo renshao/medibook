@@ -1,32 +1,42 @@
-<% @cards.each do |card| %>
+<header>
+  <div class="container">
+    <h1><span class="name">James</span> <span class="bar"></span> <span class="subtitle">medical book</span></h1>
+  </div>
+</header>
 
-  <%= content_tag :div, class: "card clearfix #{card.color}" do %>
+<div class="container">
+  
+  <% @cards.each do |card| %>
 
-    <h2 class="title"><%= card.title %></h2>
+    <%= content_tag :div, class: "card clearfix #{card.color}" do %>
 
-    <div class="date-container">
-      <div class="date-month">
-        <span class="date"><%= card.date.strftime('%d') %></span>
-        <span class="month"><%= card.date.strftime('%b') %></span>
+      <h2 class="title"><%= card.title %></h2>
+
+      <div class="date-container">
+        <div class="date-month">
+          <span class="date"><%= card.date.strftime('%d') %></span>
+          <span class="month"><%= card.date.strftime('%b') %></span>
+        </div>
+        <div class="year"><%= card.date.strftime('%Y') %></div>
       </div>
-      <div class="year"><%= card.date.strftime('%Y') %></div>
-    </div>
 
-    <ul class="symptoms">
-      <li class="symptom"><%= icon('medkit') %></li>
-      <li class="symptom"><%= icon('stethoscope') %></li>
-      <li class="symptom"><%= icon('bug') %></li>
-    </ul>
+      <ul class="symptoms">
+        <li class="symptom"><%= icon('medkit') %></li>
+        <li class="symptom"><%= icon('stethoscope') %></li>
+        <li class="symptom"><%= icon('bug') %></li>
+      </ul>
 
-    <ul>
-      <% card.medications_array.each do | medication| %>
-        <li><%= icon('check-square-o') %> <%= medication %></li>
-      <% end %>
-    </ul>
+      <ul>
+        <% card.medications_array.each do | medication| %>
+          <li><%= icon('check-square-o') %> <%= medication %></li>
+        <% end %>
+      </ul>
 
-    <div class="doctor"><%= card.doctor %></div>
-    <div>&nbsp;</div>
+      <div class="doctor"><%= card.doctor %></div>
+      <div>&nbsp;</div>
+
+    <% end %>
 
   <% end %>
 
-<% end %>
+</div>

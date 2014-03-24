@@ -4,6 +4,25 @@ body {
   color: $body-font-color;
 }
 
+header {
+  h1 {
+    color: #fff;
+    font-size: 4.77em;
+    
+    .name {
+      font-weight: 100;
+    }
+
+    .bar {
+    }
+
+    .subtitle {
+      font-size: 0.62em;
+      font-weight: bold;
+    }
+  }
+}
+
 h2 {
   font-size: 4.44em;
 }
@@ -15,6 +34,7 @@ h2 {
     font-weight: 100;
     margin-left: -3px;
     margin-bottom: 0.1em;
+    margin-top: -0.1em;
   }
 
   .date-container {
