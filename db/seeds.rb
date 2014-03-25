@@ -35,10 +35,37 @@ Card.create([
   },
 
   {
-    title: 'Croup',
+    title: 'Allergy',
     symptoms: 'cough,runny nose,fever',
-    medications: 'Dymadon,Hydralites,Cuddles',
+    medications: 'Claritin kids,Moogoo cream',
+    doctor: 'Dr. Stephenson',
+    date: '2014-08-14'.to_date,
+    color: 'red'
+  },
+
+  {
+    title: 'Immunisation',
+    symptoms: 'cough,runny nose',
+    medications: 'Ventolin,Flixotide,Redipred',
     doctor: 'Dr. Nixon',
+    date: '2014-09-12'.to_date,
+    color: 'blue'
+  },
+
+  {
+    title: 'Croup',
+    symptoms: 'cough,runny nose',
+    medications: 'Ventolin,Flixotide,Redipred',
+    doctor: 'Dr. Nixon',
+    date: '2014-09-12'.to_date,
+    color: 'red'
+  },
+
+  {
+    title: 'Allergy',
+    symptoms: 'cough,runny nose,fever',
+    medications: 'Claritin kids,Moogoo cream',
+    doctor: 'Dr. Stephenson',
     date: '2014-08-14'.to_date,
     color: 'red'
   },
@@ -48,7 +75,8 @@ Card.create([
     symptoms: 'cough,runny nose',
     medications: 'Ventolin,Flixotide,Redipred',
     doctor: 'Dr. Nixon',
-    date: '2014-09-12'.to_date,
+    date: '2014-02-08'.to_date,
     color: 'blue'
-  }  
+  }
+
 ])

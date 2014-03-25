@@ -1,14 +1,46 @@
 @import 'variables';
 @import 'typography';
 
+
+
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+ 
+.clearfix {
+    display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+    display: block;
+}
+ 
+* html .clearfix {
+    height: 1%;
+}
+
+
+
 body {
   background: url(bg.png);
 }
 
 .container {
-  width: 1270px;
+  width: ($card-width + 14px) * 4;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media all and (min-width: 1600px) {
+  .container {
+    width: ($card-width + 14px) * 5;
+  }
 }
 
 header {
@@ -16,20 +48,8 @@ header {
   margin-bottom: 20px;
 }
 
-.clearfix:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
-}
- 
-.clearfix {
-  display: inline-block;
-}
 
-$card-padding-tb: 20px;
+$card-padding-tb: 12px;
 $card-padding-lr: 20px;
 
 .card {
@@ -38,10 +58,12 @@ $card-padding-lr: 20px;
   margin-bottom: 10px;
   background: url(card-bg.png);
   width: $card-width;
-  border-top: 5px solid $card-orange-color;
+  height: $card-height;
+  border-top: ($card-height * 0.017) solid $card-orange-color;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25), -0.5px 0 1px rgba(0, 0, 0, 0.25);;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
+  vertical-align: top;
 
   @mixin card-color($color) {
     border-top-color: $color;
@@ -66,6 +88,16 @@ $card-padding-lr: 20px;
     @include card-color($card-red-color);
   }
 
+  &.allergy {
+    border-top-color: $card-allergy-border-top-color;
+    background: $card-allergy-bg-color;
+  }
+
+  &.immunisation {
+    border-top-color: $card-allergy-border-top-color;
+    background: $card-immunisation-bg-color;
+  }
+
   .date-container {
     text-align: right;
     position: absolute;
@@ -74,15 +106,42 @@ $card-padding-lr: 20px;
   }
 
   .symptoms {
-    margin-bottom: 2em;
+    display: inline-block;
+
     .symptom {
       display: inline-block;
+    }
+  }
+
+  &.allergy {
+    .time {
+      display: inline-block;
+      border-left: 1px solid #333;
+      padding-left: 0.6em;
+    }
+  }
+
+  .medications {
+    margin-top: 2em;
+  }
+
+  &.immunisation {
+    .weight-height {
+      position: absolute;
+      left: $card-padding-lr;
+      bottom: $card-padding-tb;
+      display: inline-block;
+
+      .weight {
+        margin-right: 0.6em;
+      }
     }
   }
 
   .doctor {
     position: absolute;
     right: $card-padding-lr;
+    bottom: $card-padding-tb;
     display: inline-block;
   }
 }

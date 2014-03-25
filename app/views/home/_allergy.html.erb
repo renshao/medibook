@@ -1,0 +1,29 @@
+<%= content_tag :div, class: "card clearfix allergy" do %>
+
+  <h2 class="title"><%= card.title %></h2>
+  <h2 class="allergy-food">Eggs</h2>
+
+  <div class="date-container">
+    <div class="date-month">
+      <span class="date"><%= card.date.strftime('%d') %></span>
+      <span class="month"><%= card.date.strftime('%b') %></span>
+    </div>
+    <div class="year"><%= card.date.strftime('%Y') %></div>
+  </div>
+
+  <ul class="symptoms">
+    <li class="symptom"><%= icon('medkit') %></li>
+    <li class="symptom"><%= icon('stethoscope') %></li>
+  </ul>
+
+  <span class="time">11pm - 2am</span>
+
+  <ul class="medications">
+    <% card.medications_array.each do | medication| %>
+      <li class="medication"><%= icon('check-square-o') %> <%= medication %></li>
+    <% end %>
+  </ul>
+
+  <div class="doctor"><%= card.doctor %></div>
+  
+<% end %>

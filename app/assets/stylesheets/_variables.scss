@@ -1,10 +1,18 @@
 $body-font-color: #4D4D4D;
 
+$base-font-size: 14px;
 
-$card-width: 395px;
+$card-height: $base-font-size * 16;
+$card-width: $card-height * 1.33;
 
 $card-date-color: #7F4432;
 $card-orange-color: #F28642;
 $card-blue-color: #7CBDDD;
 $card-green-color: #3E989E;
 $card-red-color: #E65453;
+
+$card-allergy-border-top-color: #4D4D4D;
+$card-allergy-bg-color: #E86474;
+
+$card-immunisation-border-top-color: #FFF;
+$card-immunisation-bg-color: #33C2D1;

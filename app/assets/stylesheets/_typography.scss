@@ -1,6 +1,10 @@
+html {
+  font-size: $base-font-size;
+}
+
 body {
   font-family: Gotham;
-  font-size: 1.1em;
+  font-size: 1em;
   color: $body-font-color;
 }
 
@@ -29,12 +33,52 @@ h2 {
 
 .card {
   position: relative;
+
   .title {
     font-family: "Gotham XNarrow";
     font-weight: 100;
     margin-left: -3px;
     margin-bottom: 0.1em;
     margin-top: -0.1em;
+  }
+
+  &.allergy {
+    color: #891A22;
+
+    .title {
+      font-size: 2em;
+      color: #FFF;
+    }
+
+    .allergy-food {
+      font-family: "Gotham XNarrow";
+      font-weight: 500;
+      font-size: 3.9em;
+      color: #FFF;
+
+      margin-left: -8px;
+      margin-top: -8px;
+    }
+  }
+
+  &.immunisation {
+    .immu-id {
+      color: #FFF;
+      font-family: Gotham;
+      font-size: 6.89em;
+      font-weight: bold;
+      margin-left: -0.1em;
+      margin-top: -0.18em;
+      .small {
+        font-size: 0.29em;
+      }
+      
+    }
+    .title {
+      color: #FFF;
+      font-size: 2em;
+      margin-top: -0.7em;
+    }
   }
 
   .date-container {
@@ -50,8 +94,19 @@ h2 {
       font-size: 2em;
     }
 
-    .month, year {
+    .month, .year {
       font-weight: bold;
+    }
+  }
+
+  &.allergy {
+    .date-container {
+      color: #333;
+    }
+  }
+  &.immunisation {
+    .date-container {
+      color: #4D4D4D;
     }
   }
 
@@ -60,9 +115,50 @@ h2 {
     font-size: 1.4em;
     margin-right: 0.3em;
   }
+  &.allergy {
+    .symptom, .time { color: #333; }
+    .time {
+      font-family: "Gotham XNarrow";
+      font-weight: 500;
+      font-size: 1.4em;
+    }
+  }
+
+  .medication {
+    font-weight: 500;
+  }
+
+  &.immunisation {
+    .weight-height {
+      font-family: "Gotham XNarrow";
+      color: #086872;
+
+      .wh {
+        font-weight: bold;
+        font-size: 1.67em;
+        .dash {font-weight: 100;}
+      }
+
+      .number {
+        color: #FFF;
+        font-size: 2.67em;
+        font-weight: 100;
+      }
+
+      .unit {
+        font-weight: 100;
+      }
+    }
+  }
 
   .doctor {
     font-family: "Gotham XNarrow";
     font-size: 1.77em;
+  }
+
+  &.allergy {
+    .doctor {
+      color: #fff;
+    }
   }
 }
