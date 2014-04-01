@@ -1,0 +1,10 @@
+.card.card-edit {
+  width: $card-width * 2 + $card-gutter-hor;
+  height: 0;
+
+  -webkit-transition: height 0.9s; 
+
+  &.editing {
+    height: $card-height * 2;
+  }
+}

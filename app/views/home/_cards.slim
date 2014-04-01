@@ -1,0 +1,7 @@
+- for card in @cards do
+  - if card.title.casecmp('allergy') == 0
+    = render partial: 'allergy', locals: {card: card}
+  - elsif card.title.casecmp('immunisation') == 0
+    = render partial: 'immunisation', locals: {card: card}
+  - else
+    = render partial: 'sick', locals: {card: card}
