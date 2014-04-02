@@ -7,4 +7,31 @@
   &.editing {
     height: $card-height * 2;
   }
+
+  .edit-title {
+    background-color: #E6E6E6;
+    border: 2px dashed #B3B3B3;
+    border-radius: 6px;
+    
+
+    &::-webkit-input-placeholder {
+      color: #CCCCCC;  
+    }
+  }
+
+  .edit-symptoms {
+    margin-top: 5em;
+    border: 2px solid #84C4D3;
+    border-radius: 6px;
+
+    h2 {
+      color: #84C4D3;
+      font-size: 2em;
+      position: relative;
+      top: -20px;
+      background: url(card-bg.png);
+      display: inline-block;
+    }
+  }
 }
+
