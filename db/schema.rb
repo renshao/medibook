@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140324032756) do
+ActiveRecord::Schema.define(version: 20140402104649) do
 
   create_table "cards", force: true do |t|
     t.string   "title"
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(version: 20140324032756) do
     t.date     "date"
     t.string   "doctor"
     t.string   "color"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.integer  "facebook_id"
+    t.text     "facebook_info"
+    t.text     "facebook_raw_info"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
