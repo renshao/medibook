@@ -1,6 +1,12 @@
 .card.card-edit {
   width: $card-width * 2 + $card-gutter-hor;
-  height: 0;
+  
+  border-top-width: 0;
+  border-radius: 6px;
+  margin-right: 0;
+  z-index: 5;
+
+  @include card-shadow;
 
   -webkit-transition: height 0.9s; 
 
@@ -8,30 +14,73 @@
     height: $card-height * 2;
   }
 
-  .edit-title {
+  .section {
+    margin-top: 5em;
+    margin-bottom: 5em;
+    border: 2px solid #84C4D3;
+    border-radius: 6px;
+
+    h2 {
+      @include card-edit-title;
+      position: relative;
+      top: -20px;
+      background: url(card-bg.png);
+      display: inline-block;
+    }
+    
+  }
+
+
+  input[type=text] {
     background-color: #E6E6E6;
     border: 2px dashed #B3B3B3;
     border-radius: 6px;
-    
+    height: 2.6em;
 
     &::-webkit-input-placeholder {
       color: #CCCCCC;  
     }
   }
 
-  .edit-symptoms {
-    margin-top: 5em;
-    border: 2px solid #84C4D3;
-    border-radius: 6px;
-
-    h2 {
-      color: #84C4D3;
-      font-size: 2em;
-      position: relative;
-      top: -20px;
-      background: url(card-bg.png);
-      display: inline-block;
-    }
+  .doctor-container {
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 }
 
+.card-edit-help {
+  display: inline-block;
+  width: $card-width + $card-gutter-hor + 5px;
+  height: $card-height * 2;
+  background-color: #E6E6E6;
+  border: 2px dashed #CCC;
+  border-left-width: 0;
+  border-radius: 0 6px 6px 0;
+  position: relative;
+  left: -5px;
+
+  padding: 2em 1em 2em 3em;
+
+  h2 {
+    @include card-edit-title;
+  }
+}
+
+.card.card-add-button {
+  @include dashed-round-border;
+  padding-left: 0;
+  text-align: center;
+  background: #E6E6E6;
+  .plus {
+    color: #CCC;
+    position: absolute;
+    top: 50%;
+    margin-top: -0.5em;
+    font-size: 4em;
+
+
+    border-radius: 50%;
+    background-color: #FFF;
+  }
+}

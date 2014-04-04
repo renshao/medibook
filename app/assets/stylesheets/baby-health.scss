@@ -1,8 +1,7 @@
 @import 'variables';
 @import 'typography';
+@import 'cards/mixins';
 @import 'edit-card';
-
-
 
 
 .clearfix:after {
@@ -53,6 +52,7 @@ header {
 $card-padding-tb: 12px;
 $card-padding-lr: 20px;
 
+
 .card {
   padding: $card-padding-tb $card-padding-lr;
   margin-right: $card-gutter-hor;
@@ -60,18 +60,13 @@ $card-padding-lr: 20px;
   background: url(card-bg.png);
   width: $card-width;
   height: $card-height;
-  border-top: ($card-height * 0.017) solid $card-orange-color;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25), -0.5px 0 1px rgba(0, 0, 0, 0.25);;
+  border-top: ($card-height * 0.017) solid $card-orange-color;  
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
   vertical-align: top;
+  display: inline-block;
 
-  @mixin card-color($color) {
-    border-top-color: $color;
-    .title {
-      color: $color;
-    }
-  }
+  
 
   &.orange {
     @include card-color($card-orange-color);
@@ -89,14 +84,20 @@ $card-padding-lr: 20px;
     @include card-color($card-red-color);
   }
 
+  &.sick {
+    @include card-shadow;
+  }
+
   &.allergy {
     border-top-color: $card-allergy-border-top-color;
     background: $card-allergy-bg-color;
+    @include card-shadow;
   }
 
   &.immunisation {
     border-top-color: $card-allergy-border-top-color;
     background: $card-immunisation-bg-color;
+    @include card-shadow;
   }
 
   .date-container {

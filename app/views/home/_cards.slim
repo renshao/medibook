@@ -1,3 +1,6 @@
+div.card.card-add-button
+  = icon('plus', '', class: 'plus')
+
 - for card in @cards do
   - if card.title.casecmp('allergy') == 0
     = render partial: 'allergy', locals: {card: card}

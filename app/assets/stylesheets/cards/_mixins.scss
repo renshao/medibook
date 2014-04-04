@@ -1,0 +1,22 @@
+@mixin card-shadow {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25), -0.5px 0 1px rgba(0, 0, 0, 0.25);
+}
+
+@mixin card-color($color) {
+  border-top-color: $color;
+  .title {
+    color: $color;
+  }
+}
+
+@mixin card-edit-title {
+  color: #84C4D3;
+  font-size: 2em;
+  font-family: "Gotham XNarrow";
+  font-weight: 300;
+}
+
+@mixin dashed-round-border {
+  border-radius: 6px;
+  border: 2px dashed #CCC;
+}
