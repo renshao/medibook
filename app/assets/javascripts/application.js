@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require angular.min
+//= require angular-animate
+//= require angular-resource
+//= require baby-health

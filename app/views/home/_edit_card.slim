@@ -1,25 +1,28 @@
-div.card.card-edit.editing
+div.card-edit-container.row ng-show="editing"
+  div.card.card-edit.editing
 
-  input.edit-title type="text" placeholder="Title"
+    input.edit-title type="text" placeholder="Title"
 
-  div.section.edit-symptoms
-    h2 What happened
+    div.section.edit-symptoms
+      h2 What happened
 
-    ul
-      li #{icon('medkit')} temp
-      li #{icon('bug')} temp
-    
-    input type="text" placeholder="others"
+      ul
+        li #{icon('medkit')} temp
+        li #{icon('bug')} temp
+      
+      input type="text" placeholder="others"
 
-  div.section.edit-actions-taken
-    h2 What did you do/give?
+    div.section.edit-actions-taken
+      h2 What did you do/give?
 
-    ul
-      li #{icon('check-square-o')} Ventolin
-      li #{icon('check-square-o')} Flixotide
-        
-  div.doctor-container
-    input type="text"
+      ul
+        li #{icon('check-square-o')} Ventolin
+        li #{icon('check-square-o')} Flixotide
+          
+    div.doctor-container
+      input type="text"
 
-div.card-edit-help
-  h2 More symptoms
+    a ng-click="save()" Save
+
+  div.card-edit-help
+    h2 More symptoms

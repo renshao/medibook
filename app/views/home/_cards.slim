@@ -1,10 +1,15 @@
-div.card.card-add-button
+div.card.card-add-button ng-click="addCard()"
   = icon('plus', '', class: 'plus')
 
-- for card in @cards do
-  - if card.title.casecmp('allergy') == 0
-    = render partial: 'allergy', locals: {card: card}
-  - elsif card.title.casecmp('immunisation') == 0
-    = render partial: 'immunisation', locals: {card: card}
-  - else
-    = render partial: 'sick', locals: {card: card}
+
+div(class="card sick clearfix {{card.color}}" ng-repeat="card in cards")
+  div(ng-include src="'/cards/partials/' + card.card_type")
+
+
+/ - for card in @cards do
+/   - if card.card_type == 'allergy'
+/     = render partial: 'allergy', locals: {card: card}
+/   - elsif card.card_type == 'immunisation'
+/     = render partial: 'immunisation', locals: {card: card}
+/   - else
+/     = render partial: 'sick', locals: {card: card}

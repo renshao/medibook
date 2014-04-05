@@ -7,6 +7,8 @@ BabyHealth::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
+  get 'cards/partials/:partial_name' => 'cards#partials'
+
   get 'login' => 'sessions#new'
   get '/auth/facebook/callback' => 'sessions#create'
 
@@ -17,7 +19,7 @@ BabyHealth::Application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  resources :cards
 
   # Example resource route with options:
   #   resources :products do

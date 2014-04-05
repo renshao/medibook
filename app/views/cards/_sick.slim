@@ -1,0 +1,21 @@
+h2.title
+  | {{card.title}}
+
+div.date-container
+  div.date-month
+    span.date {{card.date | date:'dd'}}
+    span.month {{card.date | date:'MMM'}}
+  div.year {{card.date | date:'yyyy'}}
+
+ul.symptoms
+  li.symptom: i class="fa fa-medkit"
+  li.symptom: i class="fa fa-bug"
+
+
+ul.medications
+  li.medication ng-repeat="medication in card.medications_array"
+    i class="fa fa-check-square-o"
+    '
+    |{{medication}}
+
+div.doctor {{card.doctor}}

@@ -1,18 +1,30 @@
+.card-edit-container {
+  overflow: hidden;
+  &.ng-hide-add, &.ng-hide-remove {
+    transition: all ease 0.5s;
+    display:block!important;
+  }
+
+  &.ng-hide-add.ng-hide-add-active,
+  &.ng-hide-remove {
+    height: 0;
+  }
+ 
+  &.ng-hide-add,
+  &.ng-hide-remove.ng-hide-remove-active {
+    height: $card-height * 2;
+  }
+}
+
 .card.card-edit {
   width: $card-width * 2 + $card-gutter-hor;
+  height: $card-height * 2;
   
   border-top-width: 0;
   border-radius: 6px;
   margin-right: 0;
-  z-index: 5;
-
-  @include card-shadow;
-
-  -webkit-transition: height 0.9s; 
-
-  &.editing {
-    height: $card-height * 2;
-  }
+  
+  box-shadow: 1px 2px 2px rgba(35, 31, 32, 0.25), -1px 0 1px rgba(35, 31, 32, 0.25);
 
   .section {
     margin-top: 5em;
@@ -59,6 +71,7 @@
   border-radius: 0 6px 6px 0;
   position: relative;
   left: -5px;
+  z-index: -1;
 
   padding: 2em 1em 2em 3em;
 
