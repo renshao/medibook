@@ -8,18 +8,55 @@ medicalBookServices.factory('Card', ['$resource',
 
 
 var app = angular.module('medicalBook', ['ngAnimate', 'medicalBookServices']);
+app.config([
+  "$httpProvider", function($httpProvider) {
+    $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
+  }
+]);
 
 app.controller('AppCtrl', function ($scope, Card) {
-  $scope.editing = false;
+  $scope.editingCard = null;
   $scope.cards = Card.query();
-  console.log($scope.cards);
+
+  $scope.symptomOptions = [
+    {
+      symptom: 'temp',
+      icon: 'medkit',
+      selected: false
+    },
+    {
+      symptom: 'vomit',
+      icon: 'bug',
+      selected: false
+    },
+    {
+      symptom: 'rash',
+      icon: 'linux',
+      selected: false
+    }
+  ];
 
 
   $scope.addCard = function () {
-    this.editing = true;
+    this.editingCard = new Card({card_type: 'sick'});
   };
 
   $scope.save = function () {
-    this.editing = false;
+    var card = this.editingCard;
+    card.$save();
+    $scope.cards.unshift(card);
+    this.editingCard = null;
   };
+
+  $scope.editing = function () {
+    return this.editingCard !== null;
+  };
+
+  $scope.toggleOption = function (option) {
+    option.selected = !option.selected;
+  }
+
+  $scope.optionClass = function (option) {
+    return option.selected ? 'selected' : '';
+  }
 });

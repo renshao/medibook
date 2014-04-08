@@ -1,14 +1,17 @@
-div.card-edit-container.row ng-show="editing"
+div.card-edit-container ng-show="editing()"
   div.card.card-edit.editing
 
-    input.edit-title type="text" placeholder="Title"
+    input.edit-title type="text" placeholder="Title" ng-model="editingCard.title"
+
+    input.edit-date type="date" ng-model="editingCard.date"
 
     div.section.edit-symptoms
       h2 What happened
 
-      ul
-        li #{icon('medkit')} temp
-        li #{icon('bug')} temp
+      ul.symptoms
+        li(class="symptom {{optionClass(option)}}" ng-repeat="option in symptomOptions" ng-click="toggleOption(option)")
+          i(class="fa fa-{{option.icon}}")
+          | {{option.symptom}}
       
       input type="text" placeholder="others"
 

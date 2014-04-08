@@ -2,7 +2,7 @@
   overflow: hidden;
   &.ng-hide-add, &.ng-hide-remove {
     transition: all ease 0.5s;
-    display:block!important;
+    display: block!important;
   }
 
   &.ng-hide-add.ng-hide-add-active,
@@ -51,6 +51,18 @@
 
     &::-webkit-input-placeholder {
       color: #CCCCCC;  
+    }
+  }
+
+  .edit-symptoms {
+    .symptoms {
+      .symptom {
+        cursor: pointer;
+        color: #B3B3B3;
+        &.selected {
+          color: $card-date-color;
+        }
+      }
     }
   }
 
