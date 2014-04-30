@@ -12,8 +12,13 @@ div.card-edit-container ng-show="editing()"
         li(class="symptom {{optionClass(option)}}" ng-repeat="option in symptomOptions" ng-click="toggleOption(option)")
           i(class="fa fa-{{option.icon}}")
           | {{option.symptom}}
+
+        li(class="symptom selected" ng-repeat="other in otherSymptoms")
+          | {{other}}
       
-      input type="text" placeholder="others"
+      input type="text" placeholder="others" ng-model="otherSymptom"
+
+      button ng-click="addSymptom()" add
 
     div.section.edit-actions-taken
       h2 What did you do/give?

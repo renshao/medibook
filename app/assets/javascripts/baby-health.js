@@ -36,6 +36,7 @@ app.controller('AppCtrl', function ($scope, Card) {
     }
   ];
 
+  $scope.otherSymptoms = [];
 
   $scope.addCard = function () {
     this.editingCard = new Card({card_type: 'sick'});
@@ -54,9 +55,14 @@ app.controller('AppCtrl', function ($scope, Card) {
 
   $scope.toggleOption = function (option) {
     option.selected = !option.selected;
-  }
+  };
 
   $scope.optionClass = function (option) {
     return option.selected ? 'selected' : '';
-  }
+  };
+
+  $scope.addSymptom = function () {
+    this.otherSymptoms.push(this.otherSymptom);
+    this.otherSymptom = '';
+  };
 });

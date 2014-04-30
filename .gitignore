@@ -15,4 +15,6 @@
 /log/*.log
 /tmp
 
+/public/assets/*
+
 /app/assets/stylesheets/baby-health.css
