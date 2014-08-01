@@ -1,5 +1,5 @@
 class Card < ActiveRecord::Base
-  def medications_array
-    medications.nil? ? [] : medications.split(',')
-  end
+  has_many :medications, :dependent => :delete_all
+
+  accepts_nested_attributes_for :medications
 end

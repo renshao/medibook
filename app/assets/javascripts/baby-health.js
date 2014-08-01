@@ -39,13 +39,24 @@ app.controller('AppCtrl', function ($scope, Card) {
   $scope.otherSymptoms = [];
 
   $scope.addCard = function () {
-    this.editingCard = new Card({card_type: 'sick'});
+    this.editingCard = new Card({card_type: 'sick', medications: []});
   };
 
   $scope.save = function () {
     var card = this.editingCard;
     card.$save();
     $scope.cards.unshift(card);
+    this.editingCard = null;
+  };
+
+  $scope.delete = function (card) {
+    Card.delete({id: card.id}, function success() {
+      var index = $scope.cards.indexOf(card);
+      $scope.cards.splice(index, 1);
+    });
+  };
+
+  $scope.cancel = function () {
     this.editingCard = null;
   };
 
@@ -64,5 +75,9 @@ app.controller('AppCtrl', function ($scope, Card) {
   $scope.addSymptom = function () {
     this.otherSymptoms.push(this.otherSymptom);
     this.otherSymptom = '';
+  };
+
+  $scope.addMedication = function() {
+    this.editingCard.medications.push({});
   };
 });

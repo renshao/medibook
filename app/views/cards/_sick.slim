@@ -13,9 +13,13 @@ ul.symptoms
 
 
 ul.medications
-  li.medication ng-repeat="medication in card.medications_array"
+  li.medication ng-repeat="medication in card.medications"
     i class="fa fa-check-square-o"
     '
-    |{{medication}}
+    |{{medication.name}}
 
 div.doctor {{card.doctor}}
+
+
+a.delete ng-click="delete(card)"
+  i class="fa fa-trash-o"

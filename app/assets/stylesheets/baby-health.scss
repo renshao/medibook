@@ -25,7 +25,9 @@ html[xmlns] .clearfix {
     height: 1%;
 }
 
-
+a {
+  cursor: pointer;
+}
 
 body {
   background: url(bg.png);
@@ -143,7 +145,13 @@ $card-padding-lr: 20px;
   .doctor {
     position: absolute;
     right: $card-padding-lr;
-    bottom: $card-padding-tb;
+    bottom: 24px;
     display: inline-block;
+  }
+
+  .delete {
+    position: absolute;
+    right: $card-padding-lr;
+    bottom: 5px;
   }
 }

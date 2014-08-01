@@ -11,18 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140405000942) do
+ActiveRecord::Schema.define(version: 20140801060523) do
 
   create_table "cards", force: true do |t|
     t.string   "title"
     t.string   "symptoms"
-    t.string   "medications"
     t.date     "date"
     t.string   "doctor"
     t.string   "color"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "card_type"
+  end
+
+  create_table "medications", force: true do |t|
+    t.string  "name"
+    t.integer "card_id"
   end
 
   create_table "users", force: true do |t|

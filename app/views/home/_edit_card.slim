@@ -24,13 +24,18 @@ div.card-edit-container ng-show="editing()"
       h2 What did you do/give?
 
       ul
-        li #{icon('check-square-o')} Ventolin
-        li #{icon('check-square-o')} Flixotide
+        li ng-repeat="medication in editingCard.medications"
+          #{icon('check-square-o')}
+          input type="text" ng-model="medication.name"
+          
+      button ng-click="addMedication()" add
+
           
     div.doctor-container
       input type="text"
 
     a ng-click="save()" Save
+    a ng-click="cancel()" Cancel
 
   div.card-edit-help
     h2 More symptoms

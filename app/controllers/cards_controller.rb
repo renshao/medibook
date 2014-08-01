@@ -74,5 +74,7 @@ class CardsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def card_params
       params.require(:card).permit(:title, :card_type, :symptoms, :medications, :date, :doctor, :color)
+      params[:medications_attributes] = params[:medications]
+      params
     end
 end

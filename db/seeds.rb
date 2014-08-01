@@ -8,75 +8,76 @@
 
 Card.create([
   {
+    card_type: 'sick',
     title: 'Flu',
     symptoms: 'fever,cough,runny nose',
-    medications: 'Dymadon,Fess little nose,Cuddles',
+    medications_attributes: [
+      {name: 'Dymadon'},
+      {name: 'Fess little nose'},
+      {name: 'Cuddles'}
+      ],
     doctor: 'Dr. Alan',
     date: '2013-07-13'.to_date,
     color: 'orange'
   },
 
   {
+    card_type: 'sick',
     title: 'Gastro',
     symptoms: 'fever,diarrhea',
-    medications: 'Dymadon,Hydralites,Cuddles',
+    medications_attributes: [{name: 'Dymadon'}, {name: 'Hydralites'}, {name: 'Cuddles'}],
     doctor: 'Dr. Lisik',
     date: '2013-08-10'.to_date,
     color: 'green'
   },
 
   {
+    card_type: 'sick',
     title: 'Asthma',
     symptoms: 'cough,runny nose',
-    medications: 'Ventolin,Flixotide,Redipred',
+    medications_attributes: [{name: 'Ventolin'}, {name: 'Flixotide'}, {name: 'Redipred'}],
     doctor: 'Dr. Nixon',
     date: '2014-02-08'.to_date,
     color: 'blue'
   },
 
   {
+    card_type: 'sick',
     title: 'Allergy',
     symptoms: 'cough,runny nose,fever',
-    medications: 'Claritin kids,Moogoo cream',
+    medications_attributes: [{name: 'Claritin kids'}, {name: 'Moogoo'}, {name: 'Cream'}],
     doctor: 'Dr. Stephenson',
     date: '2014-08-14'.to_date,
     color: 'red'
   },
 
   {
+    card_type: 'sick',
     title: 'Immunisation',
     symptoms: 'cough,runny nose',
-    medications: 'Ventolin,Flixotide,Redipred',
+    medications_attributes: [{name: 'Ventolin'}, {name: 'Flixotide'}, {name: 'Redipred'}],
     doctor: 'Dr. Nixon',
     date: '2014-09-12'.to_date,
     color: 'blue'
   },
 
   {
+    card_type: 'sick',
     title: 'Croup',
     symptoms: 'cough,runny nose',
-    medications: 'Ventolin,Flixotide,Redipred',
+    medications_attributes: [{name: 'Ventolin'}, {name: 'Flixotide'}, {name: 'Redipred'}],
     doctor: 'Dr. Nixon',
     date: '2014-09-12'.to_date,
     color: 'red'
   },
 
   {
+    card_type: 'sick',
     title: 'Allergy',
     symptoms: 'cough,runny nose,fever',
-    medications: 'Claritin kids,Moogoo cream',
+    medications_attributes: [{name: 'Claritin kids'}, {name: 'Moogoo'}, {name: 'Cream'}],
     doctor: 'Dr. Stephenson',
     date: '2014-08-14'.to_date,
     color: 'red'
-  },
-
-  {
-    title: 'Asthma',
-    symptoms: 'cough,runny nose',
-    medications: 'Ventolin,Flixotide,Redipred',
-    doctor: 'Dr. Nixon',
-    date: '2014-02-08'.to_date,
-    color: 'blue'
   }
-
 ])
