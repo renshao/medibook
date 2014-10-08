@@ -9,6 +9,12 @@
 
 <body ng-controller="AppCtrl">
 
+<% if session[:user_id] %>
+  <% user = User.find(session[:user_id]) %>
+  <%= user.facebook_info.name %>
+  <%= image_tag user.facebook_info.image %>
+<% end %>
+
 <%= yield %>
 
 </body>

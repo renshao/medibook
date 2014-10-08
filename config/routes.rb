@@ -10,6 +10,7 @@ BabyHealth::Application.routes.draw do
   get 'cards/partials/:partial_name' => 'cards#partials'
 
   get 'login' => 'sessions#new'
+  get 'logout' => 'sessions#destroy'
   get '/auth/facebook/callback' => 'sessions#create'
 
   # Example of regular route:

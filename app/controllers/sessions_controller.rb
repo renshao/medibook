@@ -22,8 +22,8 @@ class SessionsController < ApplicationController
     redirect_to home_url
   end
 
-  def destory
-      session[:user_id] = session[:facebook_access_token] = nil
-      redirect_to root_path, notice: "Logged out!"
+  def destroy
+    session[:user_id] = session[:facebook_access_token] = nil
+    redirect_to root_path, notice: "Logged out!"
   end
 end
