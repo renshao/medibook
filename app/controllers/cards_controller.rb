@@ -32,7 +32,7 @@ class CardsController < ApplicationController
 
     respond_to do |format|
       if @card.save
-        format.html { redirect_to @card, notice: 'Card was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Card was successfully created.' }
         format.json { render action: 'show', status: :created, location: @card }
       else
         format.html { render action: 'new' }
@@ -74,7 +74,5 @@ class CardsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def card_params
       params.require(:card).permit(:title, :card_type, :symptoms, :medications, :date, :doctor, :color)
-      params[:medications_attributes] = params[:medications]
-      params
     end
 end

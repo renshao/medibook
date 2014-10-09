@@ -1,5 +1,4 @@
 <% content_for :content do %>
-  
   <% user = User.find(session[:user_id]) %>
   
   <nav class="top-bar" data-topbar role="navigation">
@@ -24,6 +23,18 @@
       </ul>
     </section>
   </nav>
+
+
+
+  <% flash.each do |name, message| %>
+    <div data-alert class="alert-box success round">
+      <%= message %>
+      <a href="#" class="close">&times;</a>
+    </div>
+  <% end %>
+
+
+
   <%= yield %>
 <% end %>
 

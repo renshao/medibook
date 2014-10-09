@@ -1,1 +1,44 @@
-index
+<div class="row">
+  
+  <% Card.all.each do |card| %>
+    <div class="panel">
+      <h4><%= card.title %></h4>
+      <p><%= card.symptoms %></p>
+    </div>
+  <% end %>
+
+
+  <div class="row">
+    <div class="large-8 columns">
+
+    <div class="panel">
+      <%= form_for Card.new do |f| %>
+        <div class="row">
+          <div class="large-12 columns">
+            <label>Title
+              <%= f.text_field :title %>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="large-12 columns">
+            <label>Symptoms
+              <%= f.text_area :symptoms %>
+            </label>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="large-12 columns">
+            <button>Create</button>
+          </div>
+        </div>
+        
+      <% end %>
+    </div>
+
+    </div>
+  </div>
+
+</div>
