@@ -12,8 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require turbolinks
-//= require angular.min
-//= require angular-animate
-//= require angular-resource
-//= require baby-health
+
+$(function(){ $(document).foundation(); });
