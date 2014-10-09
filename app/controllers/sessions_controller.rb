@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
     session[:user_id] = user.id
     session[:facebook_access_token] = env['omniauth.auth']['credentials']['token']
 
-    redirect_to home_url
+    redirect_to '/'
   end
 
   def destroy

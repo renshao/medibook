@@ -12,7 +12,13 @@
   </head>
 
   <body>
-    <%= content_for?(:content) ? yield(:content) : yield %>
+    <% if content_for?(:content) %>
+      <%= yield(:content) %>
+    <% else %>
+      <%= render partial: 'shared/flash_messages' %>
+      <%= yield %>
+    <% end %>
+
     <%= javascript_include_tag "application" %>
   </body>
 </html>
