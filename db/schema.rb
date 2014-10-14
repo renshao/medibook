@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140801060523) do
+ActiveRecord::Schema.define(version: 20141014025808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20140801060523) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "card_type"
+    t.integer  "user_id"
   end
 
   create_table "medications", force: true do |t|

@@ -1,6 +1,6 @@
 <div class="row">
   
-  <% Card.all.each do |card| %>
+  <% Card.for_user(current_user).each do |card| %>
     <div class="panel">
       <h4><%= card.title %></h4>
       <p><%= card.symptoms %></p>

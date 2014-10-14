@@ -37,6 +37,7 @@ end
 gem 'slim'
 gem 'omniauth-facebook'
 
+gem 'pry-rails', :group => :development
 gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
