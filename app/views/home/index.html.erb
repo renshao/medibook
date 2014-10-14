@@ -3,7 +3,9 @@
   <% Card.for_user(current_user).each do |card| %>
     <div class="panel">
       <h4><%= card.title %></h4>
+      <p><%= card.date %></p>
       <p><%= card.symptoms %></p>
+      <%= link_to 'Delete', card, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button alert tiny' %>
     </div>
   <% end %>
 
@@ -15,8 +17,16 @@
       <%= form_for Card.new do |f| %>
         <div class="row">
           <div class="large-12 columns">
-            <label>Title
+            <label>Disease title
               <%= f.text_field :title %>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="large-12 columns">
+            <label>Date
+              <%= f.date_field :date %>
             </label>
           </div>
         </div>
@@ -25,6 +35,22 @@
           <div class="large-12 columns">
             <label>Symptoms
               <%= f.text_area :symptoms %>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="large-12 columns">
+            <label>Medications
+              <%= f.text_area :medications %>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="large-12 columns">
+            <label>Doctor
+              <%= f.text_field :doctor %>
             </label>
           </div>
         </div>
